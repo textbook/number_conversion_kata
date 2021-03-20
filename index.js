@@ -1,5 +1,7 @@
 function convert(number) {
-  if (number < 0) {
+  if (typeof number !== "number") {
+    throw new Error(`non-numeric input: ${number}`);
+  } else if (number < 0) {
     throw new Error(`number out of range: ${number}`);
   } else if (number < 20) {
     return words[number];
