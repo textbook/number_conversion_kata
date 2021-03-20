@@ -1,0 +1,16 @@
+{
+  "name": "num_convert",
+  "version": "1.0.0",
+  "description": "TDD Kata - number conversion",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha *.test.js"
+  },
+  "keywords": [],
+  "author": "Jonathan Sharpe <mail@jonrshar.pe>",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2"
+  }
+}
