@@ -14,4 +14,8 @@ describe("number conversion", () => {
   it("converts 2 to 'two'", () => {
     expect(convert(2)).to.equal("two");
   });
+
+  it("converts 3 to 'three'", () => {
+    expect(convert(3)).to.equal("three");
+  });
 });
