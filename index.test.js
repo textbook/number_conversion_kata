@@ -43,8 +43,10 @@ describe("number conversion", () => {
       [8, "eighty"],
       [9, "ninety"],
     ].forEach(([tens, tensWord]) => {
-      it(`converts ${tens * 10} to '${tensWord}'`, () => {
-        expect(convert(tens * 10)).to.equal(tensWord);
+      const number = tens * 10;
+      const word = tensWord;
+      it(`converts ${number} to '${word}'`, () => {
+        expect(convert(number)).to.equal(word);
       });
 
       [
