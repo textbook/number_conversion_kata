@@ -1,4 +1,7 @@
 function convert(number) {
+  if (number > 999) {
+    return compound(number, 1000, ", ", (n) => `${convert(n)} thousand`);
+  }
   if (number > 99) {
     return compound(number, 100, " and ", (n) => `${convert(n)} hundred`);
   }
