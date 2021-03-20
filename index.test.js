@@ -122,4 +122,18 @@ describe("number conversion", () => {
       });
     });
   });
+
+  describe("for non-numeric input", () => {
+    [
+      "foo",
+      "123",
+      [],
+      {},
+      new Date(),
+    ].forEach((thing) => {
+      it(`throws an error for ${thing}`, () => {
+        expect(() => convert(thing)).to.throw(`non-numeric input: ${thing}`);
+      });
+    })
+  });
 });
