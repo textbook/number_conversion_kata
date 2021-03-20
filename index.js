@@ -1,5 +1,7 @@
 function convert(number) {
-  return number ? "one": "zero";
+  return number
+    ? (number > 1 ? "two" : "one")
+    : "zero";
 }
 
 module.exports.convert = convert;
