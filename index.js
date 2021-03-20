@@ -1,6 +1,9 @@
 function convert(number) {
+  if (number > 999_999) {
+    return compound(number, 1_000_000, ", ", (n) => `${convert(n)} million`);
+  }
   if (number > 999) {
-    return compound(number, 1000, ", ", (n) => `${convert(n)} thousand`);
+    return compound(number, 1_000, ", ", (n) => `${convert(n)} thousand`);
   }
   if (number > 99) {
     return compound(number, 100, " and ", (n) => `${convert(n)} hundred`);
