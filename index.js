@@ -1,20 +1,19 @@
 function convert(number) {
-  if (number < 0 || number > 999_999_999) {
+  if (number < 0) {
+    throw new Error(`number out of range: ${number}`);
+  } else if (number < 20) {
+    return words[number];
+  } else if (number < 100) {
+    return compound(number, 10, "-", (n) => tensWords[n]);
+  } else if (number < 1_000) {
+    return compound(number, 100, " and ", (n) => `${convert(n)} hundred`);
+  } else if (number < 1_000_000) {
+    return compound(number, 1_000, ", ", (n) => `${convert(n)} thousand`);
+  } else if (number < 1_000_000_000) {
+    return compound(number, 1_000_000, ", ", (n) => `${convert(n)} million`);
+  } else {
     throw new Error(`number out of range: ${number}`);
   }
-  if (number > 999_999) {
-    return compound(number, 1_000_000, ", ", (n) => `${convert(n)} million`);
-  }
-  if (number > 999) {
-    return compound(number, 1_000, ", ", (n) => `${convert(n)} thousand`);
-  }
-  if (number > 99) {
-    return compound(number, 100, " and ", (n) => `${convert(n)} hundred`);
-  }
-  if (number > 19) {
-    return compound(number, 10, "-", (n) => tensWords[n]);
-  }
-  return words[number];
 }
 
 function compound(number, divisor, combiner, formatter) {
