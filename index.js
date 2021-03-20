@@ -1,7 +1,10 @@
 function convert(number) {
   if (number > 99) {
-    const hundreds = number / 100;
-    return `${convert(hundreds)} hundred`;
+    const hundreds = Math.floor(number / 100);
+    const remainder = number - (100 * hundreds);
+    return remainder
+      ? `${convert(hundreds)} hundred and ${convert(remainder)}`
+      : `${convert(hundreds)} hundred`;
   }
   if (number > 19) {
     const tens = Math.floor(number / 10);

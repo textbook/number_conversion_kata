@@ -74,7 +74,7 @@ describe("number conversion", () => {
       [123, "one hundred and twenty-three"],
       [300, "three hundred"],
       [420, "four hundred and twenty"],
-      [567, "five hundred and seventy-six"],
+      [567, "five hundred and sixty-seven"],
       [700, "seven hundred"],
       [911, "nine hundred and eleven"],
     ].forEach(([number, word]) => {
