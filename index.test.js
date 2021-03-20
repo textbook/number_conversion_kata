@@ -71,8 +71,12 @@ describe("number conversion", () => {
 
   describe("for numbers 100 to 999", () => {
     [
+      [123, "one hundred and twenty-three"],
       [300, "three hundred"],
+      [420, "four hundred and twenty"],
+      [567, "five hundred and seventy-six"],
       [700, "seven hundred"],
+      [911, "nine hundred and eleven"],
     ].forEach(([number, word]) => {
       it(`converts ${number} to '${word}'`, () => {
         expect(convert(number)).to.eq(word);
