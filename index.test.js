@@ -10,4 +10,8 @@ describe("number conversion", () => {
   it("converts 1 to 'one'", () => {
     expect(convert(1)).to.equal("one");
   });
+
+  it("converts 2 to 'two'", () => {
+    expect(convert(2)).to.equal("two");
+  });
 });
