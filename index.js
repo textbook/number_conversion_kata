@@ -1,7 +1,7 @@
+const words = ["zero", "one", "two"];
+
 function convert(number) {
-  return number
-    ? (number > 1 ? "two" : "one")
-    : "zero";
+  return words[number];
 }
 
 module.exports.convert = convert;
