@@ -1,5 +1,5 @@
 function convert(number) {
-  if (number < 0) {
+  if (number < 0 || number > 999_999_999) {
     throw new Error(`number out of range: ${number}`);
   }
   if (number > 999_999) {
