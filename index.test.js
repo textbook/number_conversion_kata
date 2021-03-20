@@ -109,4 +109,15 @@ describe("number conversion", () => {
       });
     });
   });
+
+  describe("for numbers out of range", () => {
+    [
+      -2,
+      -1,
+    ].forEach((number) => {
+      it(`throws an error for ${number}`, () => {
+        expect(() => convert(number)).to.throw(`number out of range: ${number}`);
+      });
+    });
+  });
 });
