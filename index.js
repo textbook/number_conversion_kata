@@ -1,4 +1,7 @@
 function convert(number) {
+  if (number < 0) {
+    throw new Error(`number out of range: ${number}`);
+  }
   if (number > 999_999) {
     return compound(number, 1_000_000, ", ", (n) => `${convert(n)} million`);
   }
