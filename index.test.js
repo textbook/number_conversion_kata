@@ -114,6 +114,8 @@ describe("number conversion", () => {
     [
       -2,
       -1,
+      1_000_000_000,
+      1_000_000_001,
     ].forEach((number) => {
       it(`throws an error for ${number}`, () => {
         expect(() => convert(number)).to.throw(`number out of range: ${number}`);
