@@ -79,7 +79,7 @@ describe("number conversion", () => {
       [911, "nine hundred and eleven"],
     ].forEach(([number, word]) => {
       it(`converts ${number} to '${word}'`, () => {
-        expect(convert(number)).to.eq(word);
+        expect(convert(number)).to.equal(word);
       });
     });
   });
@@ -92,7 +92,7 @@ describe("number conversion", () => {
       [123_456, "one hundred and twenty-three thousand, four hundred and fifty-six"],
     ].forEach(([number, word]) => {
       it(`converts ${number} to '${word}'`, () => {
-        expect(convert(number)).to.eq(word);
+        expect(convert(number)).to.equal(word);
       });
     });
   });
@@ -105,7 +105,7 @@ describe("number conversion", () => {
       [123_456_789, "one hundred and twenty-three million, four hundred and fifty-six thousand, seven hundred and eighty-nine"],
     ].forEach(([number, word]) => {
       it(`converts ${number} to '${word}'`, () => {
-        expect(convert(number)).to.eq(word);
+        expect(convert(number)).to.equal(word);
       });
     });
   });
