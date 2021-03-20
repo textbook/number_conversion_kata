@@ -46,6 +46,24 @@ describe("number conversion", () => {
       it(`converts ${tens * 10} to '${tensWord}'`, () => {
         expect(convert(tens * 10)).to.equal(tensWord);
       });
+
+      [
+        [1, "one"],
+        [2, "two"],
+        [3, "three"],
+        [4, "four"],
+        [5, "five"],
+        [6, "six"],
+        [7, "seven"],
+        [8, "eight"],
+        [9, "nine"],
+      ].forEach(([units, unitsWord]) => {
+        const number = (tens * 10) + units;
+        const word = `${tensWord}-${unitsWord}`;
+        it(`converts ${number} to '${word}'`, () => {
+          expect(convert(number)).to.equal(word);
+        });
+      });
     });
   });
 });
