@@ -1,21 +1,20 @@
 function convert(number) {
   if (number > 99) {
-    const hundreds = Math.floor(number / 100);
-    const remainder = number - (100 * hundreds);
-    const hundredsWord = `${convert(hundreds)} hundred`;
-    return remainder
-      ? `${hundredsWord} and ${convert(remainder)}`
-      : hundredsWord;
+    return compound(number, 100, " and ", (n) => `${convert(n)} hundred`);
   }
   if (number > 19) {
-    const tens = Math.floor(number / 10);
-    const units = number - (10 * tens);
-    const tensWord = tensWords[tens];
-    return units
-      ? `${tensWord}-${convert(units)}`
-      : tensWord;
+    return compound(number, 10, "-", (n) => tensWords[n]);
   }
   return words[number];
+}
+
+function compound(number, divisor, combiner, formatter) {
+  const start = Math.floor(number / divisor);
+  const remainder = number - (divisor * start);
+  const startWord = formatter(start);
+  return remainder
+    ? `${startWord}${combiner}${convert(remainder)}`
+    : startWord;
 }
 
 const words = [
