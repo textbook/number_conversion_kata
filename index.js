@@ -1,3 +1,5 @@
-function convert() {}
+function convert() {
+  return "zero";
+}
 
 module.exports.convert = convert;
