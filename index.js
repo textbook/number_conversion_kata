@@ -1,4 +1,8 @@
 function convert(number) {
+  if (number > 99) {
+    const hundreds = number / 100;
+    return `${convert(hundreds)} hundred`;
+  }
   if (number > 19) {
     const tens = Math.floor(number / 10);
     const units = number - (10 * tens);
