@@ -3,7 +3,7 @@ function convert(number) {
     const tens = Math.floor(number / 10);
     const units = number - (10 * tens);
     return units
-      ? `${tensWords[tens]}-${words[units]}`
+      ? `${tensWords[tens]}-${convert(units)}`
       : tensWords[tens];
   }
   return words[number];
