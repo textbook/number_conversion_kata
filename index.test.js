@@ -68,4 +68,15 @@ describe("number conversion", () => {
       });
     });
   });
+
+  describe("for numbers 100 to 999", () => {
+    [
+      [300, "three hundred"],
+      [700, "seven hundred"],
+    ].forEach(([number, word]) => {
+      it(`converts ${number} to '${word}'`, () => {
+        expect(convert(number)).to.eq(word);
+      });
+    });
+  });
 });
