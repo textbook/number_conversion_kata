@@ -31,4 +31,21 @@ describe("number conversion", () => {
       });
     });
   });
+
+  describe("for numbers 20 to 99", () => {
+    [
+      [2, "twenty"],
+      [3, "thirty"],
+      [4, "forty"],
+      [5, "fifty"],
+      [6, "sixty"],
+      [7, "seventy"],
+      [8, "eighty"],
+      [9, "ninety"],
+    ].forEach(([tens, tensWord]) => {
+      it(`converts ${tens * 10} to '${tensWord}'`, () => {
+        expect(convert(tens * 10)).to.equal(tensWord);
+      });
+    });
+  });
 });
