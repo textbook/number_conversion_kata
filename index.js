@@ -10,9 +10,10 @@ function convert(number) {
   if (number > 19) {
     const tens = Math.floor(number / 10);
     const units = number - (10 * tens);
+    const tensWord = tensWords[tens];
     return units
-      ? `${tensWords[tens]}-${convert(units)}`
-      : tensWords[tens];
+      ? `${tensWord}-${convert(units)}`
+      : tensWord;
   }
   return words[number];
 }
