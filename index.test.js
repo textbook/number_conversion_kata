@@ -96,4 +96,17 @@ describe("number conversion", () => {
       });
     });
   });
+
+  describe("for numbers 1,000,000 to 999,999,999", () => {
+    [
+      [1_000_000, "one million"],
+      [1_234_567, "one million, two hundred and thirty-four thousand, five hundred and sixty-seven"],
+      [12_345_678, "twelve million, three hundred and forty-five thousand, six hundred and seventy-eight"],
+      [123_456_789, "one hundred and twenty-three million, four hundred and fifty-six thousand, seven hundred and eighty-nine"],
+    ].forEach(([number, word]) => {
+      it(`converts ${number} to '${word}'`, () => {
+        expect(convert(number)).to.eq(word);
+      });
+    });
+  });
 });
