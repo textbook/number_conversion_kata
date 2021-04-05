@@ -4,12 +4,15 @@
   "description": "TDD Kata - number conversion",
   "main": "index.js",
   "scripts": {
-    "test": "mocha *.test.js"
+    "test": "mocha *.test.js",
+    "test:mutate": "stryker run"
   },
   "keywords": [],
   "author": "Jonathan Sharpe <mail@jonrshar.pe>",
   "license": "ISC",
   "devDependencies": {
+    "@stryker-mutator/core": "^4.5.1",
+    "@stryker-mutator/mocha-runner": "^4.5.1",
     "chai": "^4.3.4",
     "mocha": "^8.3.2"
   }
