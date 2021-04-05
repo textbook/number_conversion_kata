@@ -22,9 +22,13 @@ function compound(number, divisor, combiner, formatter) {
   const start = Math.floor(number / divisor);
   const remainder = number - (divisor * start);
   const startWord = formatter(start);
-  return remainder
-    ? `${startWord}${combiner}${convert(remainder)}`
-    : startWord;
+  if (remainder === 0) {
+    return startWord;
+  }
+  const rest = convert(remainder);
+  return (divisor >= 1_000 && remainder < 100)
+    ? `${startWord} and ${rest}`
+    : `${startWord}${combiner}${rest}`;
 }
 
 const words = [
