@@ -71,12 +71,16 @@ describe("number conversion", () => {
 
   describe("for numbers 100 to 999", () => {
     [
+      [100, "one hundred"],
+      [101, "one hundred and one"],
       [123, "one hundred and twenty-three"],
       [300, "three hundred"],
       [420, "four hundred and twenty"],
       [567, "five hundred and sixty-seven"],
       [700, "seven hundred"],
       [911, "nine hundred and eleven"],
+      [998, "nine hundred and ninety-eight"],
+      [999, "nine hundred and ninety-nine"],
     ].forEach(([number, word]) => {
       it(`converts ${number} to '${word}'`, () => {
         expect(convert(number)).to.equal(word);
@@ -87,9 +91,12 @@ describe("number conversion", () => {
   describe("for numbers 1,000 to 999,999", () => {
     [
       [1_000, "one thousand"],
+      [1_001, "one thousand and one"],
       [10_000, "ten thousand"],
       [12_345, "twelve thousand, three hundred and forty-five"],
       [123_456, "one hundred and twenty-three thousand, four hundred and fifty-six"],
+      [999_998, "nine hundred and ninety-nine thousand, nine hundred and ninety-eight"],
+      [999_999, "nine hundred and ninety-nine thousand, nine hundred and ninety-nine"],
     ].forEach(([number, word]) => {
       it(`converts ${number} to '${word}'`, () => {
         expect(convert(number)).to.equal(word);
@@ -100,9 +107,12 @@ describe("number conversion", () => {
   describe("for numbers 1,000,000 to 999,999,999", () => {
     [
       [1_000_000, "one million"],
+      [1_000_001, "one million and one"],
       [1_234_567, "one million, two hundred and thirty-four thousand, five hundred and sixty-seven"],
       [12_345_678, "twelve million, three hundred and forty-five thousand, six hundred and seventy-eight"],
       [123_456_789, "one hundred and twenty-three million, four hundred and fifty-six thousand, seven hundred and eighty-nine"],
+      [999_999_998, "nine hundred and ninety-nine million, nine hundred and ninety-nine thousand, nine hundred and ninety-eight"],
+      [999_999_999, "nine hundred and ninety-nine million, nine hundred and ninety-nine thousand, nine hundred and ninety-nine"],
     ].forEach(([number, word]) => {
       it(`converts ${number} to '${word}'`, () => {
         expect(convert(number)).to.equal(word);
